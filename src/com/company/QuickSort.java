@@ -10,8 +10,10 @@ public class QuickSort {
 
         Scanner scanner = new Scanner(System.in);
 
-        int size = Integer.parseInt(scanner.nextLine());
-        String[] stringTable = scanner.nextLine().split("\\s");
+//        int size = Integer.parseInt(scanner.nextLine());
+//        String[] stringTable = scanner.nextLine().split("\\s");
+        int size = 9;
+        String[] stringTable = ("2 5 1 3 4 0 6 2 5").split("\\s");
         int[] table = new int[size];
         for (int inc = 0; inc < size; inc++) {
             table[inc] = Integer.parseInt(stringTable[inc]);
@@ -26,48 +28,39 @@ public class QuickSort {
     }
 
     static void quickSort(int[] table, int left, int right) {
-        int i;
-        int j;
+        int i = left;
+        int j = right;
 
-        if (right <= left) {
-            return;
-        }
+        int pivot = table[(right + left) / 2];
 
-        int pivotPos = (right + 1) / 2;
-        int pivot = table[pivotPos];
-
-
-        while (true) {
-
-            for (i = left; i < right; i++) {
-                if (table[i] >= pivot) {
-                    break;
-                }
+        do {
+            while (table[i] < pivot) {
+                i++;
             }
 
-            for (j = right; j > left; j--) {
-                if (table[j] <= pivot) {
-                    break;
-                }
+            while (table[j] > pivot) {
+                j--;
             }
 
-
-            if (i < j) {
+            if (i <= j) {
                 int swap = table[i];
                 table[i] = table[j];
                 table[j] = swap;
-            } else {
-                break;
+
+                i++;
+                j--;
             }
+
+
+        } while (i <= j);
+
+        if (left<j){
+            quickSort(table,left,j);
         }
 
-        if (j > left) {
-            quickSort(table, left, j);
+        if (right>i){
+            quickSort(table,i,right);
         }
-        if (i < right) {
-            quickSort(table, i, right);
-        }
-
 
     }
 }
