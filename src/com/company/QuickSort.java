@@ -10,20 +10,18 @@ public class QuickSort {
 
         Scanner scanner = new Scanner(System.in);
 
-//        int size = Integer.parseInt(scanner.nextLine());
-//        String[] stringTable = scanner.nextLine().split("\\s");
-        int size = 9;
-        String[] stringTable = ("2 5 1 3 4 0 6 2 5").split("\\s");
+        int size = Integer.parseInt(scanner.nextLine());
+        String[] stringTable = scanner.nextLine().split("\\s");
+//        int size = 9;
+//        String[] stringTable = ("2 5 1 3 4 0 6 2 5").split("\\s");
         int[] table = new int[size];
         for (int inc = 0; inc < size; inc++) {
             table[inc] = Integer.parseInt(stringTable[inc]);
         }
 
-        System.out.println(Arrays.toString(table));
-
         quickSort(table, 0, size - 1);
 
-        System.out.println(Arrays.toString(table));
+        System.out.println("\n"+Arrays.toString(table));
 
     }
 
