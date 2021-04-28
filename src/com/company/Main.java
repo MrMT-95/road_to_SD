@@ -25,9 +25,9 @@ public class Main {
 //        quickSort(table, 0, size - 1);
 
 
-        float[] table = new float[size];
+        double[] table = new double[size];
         for (int inc = 0; inc < size; inc++) {
-            table[inc] = Float.parseFloat(stringTable[inc]);
+            table[inc] = Double.parseDouble(stringTable[inc]);
         }
 
         bucketSort(table, size);
