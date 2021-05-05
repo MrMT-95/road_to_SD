@@ -15,7 +15,7 @@ public class Main {
 //        String[] stringTable = scanner.nextLine().split("\\s");
         int size = 10;
 
-        String[] stringTable = ("7 546 9 1 3 10 6 4 8 2").split("\\s");
+        String[] stringTable = ("7 4 9 1 3 10 6 5 8 2").split("\\s");
         int[] table = new int[size];
         for (int inc = 0; inc < size; inc++) {
             table[inc] = Integer.parseInt(stringTable[inc]);
@@ -34,6 +34,10 @@ public class Main {
 //        StackSort.stackSort(table,size);
 
 //        StackSort2.stackSort(table, size);
+
+        BinaryHeap.sort(table,size);
+//        BinaryHeap.insert(table,size,62);
+//        BinaryHeap.delete(table,size,9);
 
 
         System.out.println("\n" + Arrays.toString(table));
